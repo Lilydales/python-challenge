@@ -6,9 +6,11 @@ net_total = 0
 previous_profit_loss = 0
 monthly_changes = []
 dates = []
-linkcsv = r'C:\Users\phamt\OneDrive\Desktop\homework\python-challenge\PyBank\resources\budget_data.csv'
+input_file = r'resources\budget_data.csv'
+output_file = r'analysis\PyBank_FinalResults.txt'
+
 # import csv file
-with open(linkcsv, newline='') as csvfile:
+with open(input_file, newline='') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
 
 # skip header row
@@ -42,7 +44,7 @@ max_increase_date = dates[monthly_changes.index(max_increase)]
 max_decrease_date = dates[monthly_changes.index(max_decrease)]
 
 #Save results to textfile
-with open(r'analysis\PyBank_FinalResults.txt', 'w') as txtfile:
+with open(output_file, 'w') as txtfile:
     txtfile.write("Financial Analysis\n")
     txtfile.write("----------------------------\n")
     txtfile.write(f"Total Months: ${total_month}\n")
