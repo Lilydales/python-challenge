@@ -24,6 +24,9 @@ with open(input_file, newline='') as csvfile:
         #Calculate the total num of months
         total_month += 1
 
+        #Sum net profit/loss
+        net_total += profit_loss
+
         #Calculate the change in profit/loss from pre months
         if total_month > 1:
             monthly_change = profit_loss - previous_profit_loss
@@ -50,8 +53,8 @@ with open(output_file, 'w') as txtfile:
     txtfile.write(f"Total Months: ${total_month}\n")
     txtfile.write(f"Total : ${net_total}\n")
     txtfile.write(f"Average Change: ${average_change}\n")
-    txtfile.write(f"Greatest Increase in Profit: {max_increase_date} (${max_increase})\n")
-    txtfile.write(f"Greatest Decrease in Profit: {max_decrease_date} (${max_decrease})\n")
+    txtfile.write(f"Greatest Increase in Profits: {max_increase_date} (${max_increase})\n")
+    txtfile.write(f"Greatest Decrease in Profits: {max_decrease_date} (${max_decrease})\n")
 
 #Print the above results in Terminal
 print("Financial Analysis\n")
@@ -59,5 +62,5 @@ print("----------------------------\n")
 print(f"Total Months: ${total_month}\n")
 print(f"Total : ${net_total}\n")
 print(f"Average Change: ${average_change}\n")
-print(f"Greatest Increase in Profit: {max_increase_date} (${max_increase})\n")
-print(f"Greatest Decrease in Profit: {max_decrease_date} (${max_decrease})\n")
+print(f"Greatest Increase in Profits: {max_increase_date} (${max_increase})\n")
+print(f"Greatest Decrease in Profits: {max_decrease_date} (${max_decrease})\n")

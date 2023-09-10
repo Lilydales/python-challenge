@@ -22,7 +22,7 @@ with open(input_file, newline='') as csvfile:
         county = row[1]
 
         total_votes += 1
-        #List of all votes with candidate
+        #List of all votes with candidates
         list_ballots.append(ballot)
 
         #Collect a list of candidates
@@ -30,11 +30,13 @@ with open(input_file, newline='') as csvfile:
             list_candidates.append(candidate)
             list_counties.append(county)
 
-
+#Print results in terminal
 print('Election Results\n')
 print('-------------------------\n')
 print(f'Total Vote: {total_votes}\n')
 print('-------------------------\n')
+
+#Loop to make the results dynamic
 for candidate in list_candidates:
     #Calculate the total votes & %
     print(f'{candidate}: {round(list_ballots.count(candidate)/total_votes*100,3)}% ({list_ballots.count(candidate)})\n')
