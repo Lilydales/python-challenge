@@ -1,6 +1,6 @@
 import csv
 
-# assign Variable
+#Assign Variable
 total_month = 0
 net_total = 0
 previous_profit_loss = 0
@@ -9,11 +9,11 @@ dates = []
 input_file = r'resources\budget_data.csv'
 output_file = r'analysis\PyBank_FinalResults.txt'
 
-# import csv file
+#Import csv file
 with open(input_file, newline='') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
 
-# skip header row
+#Skip header row
     next(csvreader)
 
     for row in csvreader:
